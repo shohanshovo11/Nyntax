@@ -1,12 +1,23 @@
+import { useRef } from "react";
+import { useImperativeHandle } from "react";
+
 export default function InputField({
+  playerName,
   inputValue,
   placeHolderValue,
   onChange,
   playerPreviousText,
   playerTurn,
   onSubmit,
+  PlayerRef,
 }) {
-  console.log(playerPreviousText);
+  const inputRef = useRef(null);
+
+  useImperativeHandle(PlayerRef, () => ({
+    focus() {
+      inputRef?.current?.focus();
+    },
+  }));
   // useEffect(() => {
   //   const handlePlaceHolder = () => {
   //     if (placeHolderValue === null) return;
@@ -22,6 +33,8 @@ export default function InputField({
     <div>
       <input
         className="pr-6 pl-3 py-2 min-w-60 border-2 rounded-md text-lg"
+        autoFocus
+        name={playerName}
         value={inputValue}
         placeholder={playerPreviousText === null ? "" : placeHolderValue}
         onChange={onChange}
@@ -31,6 +44,7 @@ export default function InputField({
           }
         }}
         disabled={!playerTurn}
+        ref={PlayerRef}
       />
     </div>
   );

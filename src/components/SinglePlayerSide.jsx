@@ -12,8 +12,8 @@ export default function SinglePlayerSide({
   placeHolderValue,
   playerTurn,
   onSubmit,
+  PlayerRef
 }) {
-  console.log(playerName, playerTurn);
   const turn = playerTurn === playerName ? true : false;
   return (
     <div className="w-80 flex justify-center items-center flex-col">
@@ -22,12 +22,14 @@ export default function SinglePlayerSide({
         {currentPoint}
       </div>
       <InputField
+        playerName={playerName}
         inputValue={playerText}
         onChange={onChangeInputField}
         playerPreviousText={playerPreviousText}
         placeHolderValue={placeHolderValue}
         playerTurn={turn}
         onSubmit={onSubmit}
+        PlayerRef={PlayerRef}
       />
       <HistorySection wordHistoryArray={wordHistoryArray} />
     </div>

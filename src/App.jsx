@@ -1,23 +1,27 @@
 import { useState } from "react";
 import SinglePlayerSide from "./components/SinglePlayerSide";
 import axios from "axios";
+import { useRef } from "react";
 
 export default function App() {
   const [playerOneHistoryArray, setPlayerOneHistoryArray] = useState([]);
-  const [playerOneText, setPlayerOneText] = useState("Hello");
+  const [playerOneText, setPlayerOneText] = useState("");
   const [playerOnePoint, setPlayerOnePoint] = useState(150);
-  const [playerOneName, setPlayerOneName] = useState("Shovo");
+  const [playerOneName, setPlayerOneName] = useState("Player 1");
   const [playerOneTimer, setPlayerOneTimer] = useState(5);
   const [playerOnePlaceholder, setPlayerOnePlaceholder] = useState("");
 
   const [playerTwoHistoryArray, setPlayerTwoHistoryArray] = useState([]);
   const [playerTwoText, setPlayerTwoText] = useState("");
   const [playerTwoPoint, setPlayerTwoPoint] = useState(150);
-  const [playerTwoName, setPlayerTwoName] = useState("Shovos");
+  const [playerTwoName, setPlayerTwoName] = useState("Player 2");
   const [playerTwoTimer, setPlayerTwoTimer] = useState(5);
   const [playerTwoPlaceholder, setPlayerTwoPlaceholder] = useState("");
 
   const [playerTurn, setPlayerTurn] = useState(playerOneName);
+
+  const PlayerOneRef = useRef(null);
+  const PlayerTwoRef = useRef(null);
 
   const handlePlayerOneInput = (e) => {
     setPlayerOneText(e.target.value);
@@ -42,6 +46,8 @@ export default function App() {
         setPlayerOneText("");
         setPlayerOnePoint(playerOnePoint - 10);
         setPlayerTurn(playerTwoName);
+        console.log(PlayerTwoRef, "reff");
+        PlayerTwoRef.current.focus();
       }
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -63,10 +69,12 @@ export default function App() {
           { value: playerTwoText },
         ]);
         setPlayerTwoPlaceholder("");
-        setPlayerTwoPlaceholder(playerTwoText[playerTwoText.length - 1]);
+        setPlayerOnePlaceholder(playerTwoText[playerTwoText.length - 1]);
         setPlayerTwoText("");
         setPlayerTwoPoint(playerTwoPoint - 10);
         setPlayerTurn(playerOneName);
+        console.log(PlayerOneRef, "reff");
+        PlayerOneRef.current.focus();
       }
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -95,6 +103,7 @@ export default function App() {
           placeHolderValue={playerOnePlaceholder}
           playerTurn={playerTurn}
           onSubmit={handlePlayerOneSubmit}
+          PlayerRef={PlayerOneRef}
         />
         {/* Player 2 */}
         <SinglePlayerSide
@@ -111,6 +120,7 @@ export default function App() {
           placeHolderValue={playerTwoPlaceholder}
           playerTurn={playerTurn}
           onSubmit={handlePlayerTwoSubmit}
+          PlayerRef={PlayerTwoRef}
         />
       </div>
     </div>
