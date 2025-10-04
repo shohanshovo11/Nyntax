@@ -6,6 +6,7 @@
 
 **A thrilling two-player word game that challenges your vocabulary and speed!**
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://nyntax-project.netlify.app/)
 [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -59,6 +60,14 @@ The following will show an error and keep you on your turn:
 - Case-insensitive duplicate checking
 
 ## Getting Started
+
+### Quick Start
+
+**Want to play right now?**
+
+[🎮 **Play Nyntax Online**](https://nyntax-project.netlify.app/) - No installation required!
+
+### Local Development
 
 ### Prerequisites
 
@@ -212,7 +221,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Ready to challenge your vocabulary? Start playing Nyntax now!**
 
-[Star this repo](https://github.com/shohanshovo11/Nyntax) | [Report Bug](https://github.com/shohanshovo11/Nyntax/issues) | [Request Feature](https://github.com/shohanshovo11/Nyntax/issues)
+[🎮 **Play Now**](https://nyntax-project.netlify.app/) | [Star this repo](https://github.com/shohanshovo11/Nyntax) | [Report Bug](https://github.com/shohanshovo11/Nyntax/issues) | [Request Feature](https://github.com/shohanshovo11/Nyntax/issues)
 
 </div>
 
