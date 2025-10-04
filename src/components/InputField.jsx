@@ -1,12 +1,10 @@
-import { useRef } from "react";
-import { useImperativeHandle } from "react";
+import { useRef, useImperativeHandle } from "react";
 
 export default function InputField({
   playerName,
   inputValue,
   placeHolderValue,
   onChange,
-  playerPreviousText,
   playerTurn,
   onSubmit,
   PlayerRef,
@@ -36,7 +34,7 @@ export default function InputField({
         autoFocus
         name={playerName}
         value={inputValue}
-        placeholder={playerPreviousText === null ? "" : placeHolderValue}
+        placeholder={playerTurn ? placeHolderValue : ""}
         onChange={onChange}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -44,7 +42,7 @@ export default function InputField({
           }
         }}
         disabled={!playerTurn}
-        ref={PlayerRef}
+        ref={inputRef}
       />
     </div>
   );
