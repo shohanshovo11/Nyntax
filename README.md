@@ -170,19 +170,9 @@ Nyntax/
 - **Real-time validation**: Checks word validity in English dictionary
 - **Error handling**: Graceful handling of API failures
 
-## Screenshots
-
-### Game Screen
-
-![Game Interface](https://via.placeholder.com/800x400/61DAFB/000000?text=Game+Interface)
-
-### Game Over Screen
-
-![Winner Screen](https://via.placeholder.com/800x400/22C55E/000000?text=Winner+Screen)
-
 ## Contributing
 
-We welcome contributions! Here's how you can help:
+I welcome contributions! Here's how you can help:
 
 1. **Fork the repository**
 2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
@@ -196,21 +186,6 @@ We welcome contributions! Here's how you can help:
 - Add comments for complex logic
 - Test your changes thoroughly
 - Update README if needed
-
-## Known Issues & Troubleshooting
-
-### Common Issues
-
-1. **Timer not starting**: Refresh the page and try again
-2. **API errors**: Check your internet connection
-3. **Focus issues**: Make sure to click on input fields
-
-### Browser Compatibility
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
 
 ## License
 
